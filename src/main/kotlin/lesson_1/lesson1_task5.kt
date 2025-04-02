@@ -4,11 +4,15 @@ package lesson_1
 //Год полета – 1961
 //Взлет – 09:07
 //Посадка – 10:55
+
+const val secondsInHour = 3600
+const val secondsInMinute = 60
+
 fun main() {
-    val gagarinInSpaceInSec = (10-9) * 3600 + (55 - 7) * 60
+    val gagarinInSpaceInSec = 6480
     println(gagarinInSpaceInSec)
-    val hours = gagarinInSpaceInSec / 3600
-    val minutes = (gagarinInSpaceInSec - hours * 3600) / 60
+    val hours = gagarinInSpaceInSec / secondsInHour
+    val minutes = (gagarinInSpaceInSec - hours * secondsInHour) / secondsInMinute
     println("0$hours:$minutes:00")
 
 }
