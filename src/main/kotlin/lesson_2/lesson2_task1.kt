@@ -10,4 +10,5 @@ fun main() {
     val averageScore = (score_1 + score_2 + score_3 + score_4) / numberOfStudents
 
     println(String.format("%.2f", averageScore))
+
 }
