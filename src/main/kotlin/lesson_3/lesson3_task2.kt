@@ -12,5 +12,5 @@ fun main() {
 
     surName = "Сидорова"
 
-    println("$surName $firstName $secondName, $ageSecond лет")
+    println("$surName $firstName $secondName, $ageSecond года")
 }
