@@ -6,13 +6,15 @@ const val MAX_LTRS = 100
 
 fun main() {
 
-    val weight_1 = 20
-    val volume_1 = 80
-    val weight_2 = 50
-    val volume_2 = 100
-    val comparison_1: Boolean = weight_1 > MINIMAL_WEIGHT && weight_1 <= MAX_WEIGHT && volume_1 < MAX_LTRS
-    val comparison_2: Boolean = weight_2 > MINIMAL_WEIGHT && weight_2 <= MAX_WEIGHT && volume_2 < MAX_LTRS
+    var weight = 20
+    var volume = 80
+    var comparison = (weight > MINIMAL_WEIGHT) && (weight <= MAX_WEIGHT) && (volume < MAX_LTRS)
 
-    println("Груз с весом $weight_1 кг и объемом $volume_1 л соответствует категории 'Average': $comparison_1")
-    println("Груз с весом $weight_2 кг и объемом $volume_2 л соответствует категории 'Average': $comparison_2")
+    println("Груз с весом $weight кг и объемом $volume л соответствует категории 'Average': $comparison")
+
+    weight = 50
+    volume = 100
+    comparison = (weight > MINIMAL_WEIGHT) && (weight <= MAX_WEIGHT) && (volume < MAX_LTRS)
+
+    println("Груз с весом $weight кг и объемом $volume л соответствует категории 'Average': $comparison")
 }
