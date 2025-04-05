@@ -5,12 +5,13 @@ fun main() {
     var surName = "Андреева"
     val firstName = "Татьяна"
     val secondName = "Сергеевна"
-    val ageFirst = 20
-    val ageSecond = 22
+    var age = 20
 
-    println("$surName $firstName $secondName, $ageFirst лет")
+
+    println("$surName $firstName $secondName, $age лет")
 
     surName = "Сидорова"
+    age = 22
 
-    println("$surName $firstName $secondName, $ageSecond года")
+    println("$surName $firstName $secondName, $age года")
 }
