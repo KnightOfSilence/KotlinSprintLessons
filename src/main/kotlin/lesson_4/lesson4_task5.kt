@@ -1,14 +1,12 @@
 package lesson_4
 
 const val FOOD_BOXES = 50
-const val CREW_REQUIREMENT = 70
-const val SHIP_UNDAMAGED = true
-const val GOOD_WEATHER = true
-const val SHIP_DAMAGED = true
+const val IS_CASE_DAMAGE = false
+const val IS_WEATHER_GOOD = true
+const val CREW_MIN = 55
+const val CREW_MAX = 70
 
 fun main() {
-
-    val crew = 55..70
 
     println("Численность экипажа?")
     val crewNum = readln().toInt()
@@ -21,10 +19,16 @@ fun main() {
 
     println("Погода хорошая?")
     val weatherCondition = readln().toBoolean()
-    val startWithoutDamages = (damagedShip == SHIP_UNDAMAGED) && (crewNum in crew) && (foodBoxes > FOOD_BOXES)
-    val startWithDamages = (damagedShip == SHIP_DAMAGED)
-            && (crewNum == CREW_REQUIREMENT) && (foodBoxes > FOOD_BOXES)
-            && (weatherCondition == GOOD_WEATHER)
-    val result = "Корабль готов к плаванию: ${startWithDamages or startWithoutDamages}"
+    val canStart = ((damagedShip == IS_CASE_DAMAGE)
+            && ((CREW_MIN <= crewNum)
+            && (crewNum <= CREW_MAX))
+            && (foodBoxes > FOOD_BOXES))
+            || ((damagedShip != IS_CASE_DAMAGE)
+            && (crewNum == CREW_MAX)
+            && (foodBoxes > FOOD_BOXES)
+            && (weatherCondition == IS_WEATHER_GOOD))
+    val result = "Корабль готов к плаванию: $canStart"
     println(result)
 }
+
+
