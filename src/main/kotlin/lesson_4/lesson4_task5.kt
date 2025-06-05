@@ -26,6 +26,5 @@ fun main() {
             && (crewNum == CREW_MAX)
             && (foodBoxes > FOOD_BOXES)
             && (weatherCondition == IS_WEATHER_GOOD))
-    val result = "Корабль готов к плаванию: $canStart"
-    println(result)
+    println("Корабль готов к плаванию: $canStart")
 }
