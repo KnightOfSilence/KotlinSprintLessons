@@ -29,5 +29,3 @@ fun main() {
     val result = "Корабль готов к плаванию: $canStart"
     println(result)
 }
-
-
