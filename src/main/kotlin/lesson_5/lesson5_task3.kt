@@ -1,23 +1,25 @@
 package lesson_5
 
-const val NUMBER_ONE = 31
-const val NUMBER_TWO = 19
-
 fun main() {
+
+    val number1 = (0..42).random()
+    val number2 = (0..42).random()
 
     println("Введите первое число от 0 до 42")
     val userFirstNum = readln().toInt()
     println("Введите второе число от 0 до 42")
     val userSecondNum = readln().toInt()
 
-    if ((userFirstNum == NUMBER_ONE || userFirstNum == NUMBER_TWO) && (userSecondNum == NUMBER_ONE || userSecondNum == NUMBER_TWO)){
+    if ((userFirstNum == number1 || userFirstNum == number2) &&
+        (userSecondNum == number1 || userSecondNum == number2)){
         println("Поздравляем! Вы выиграли главный приз!")
     }
-    else if ((userFirstNum == NUMBER_ONE || userFirstNum == NUMBER_TWO) || (userSecondNum == NUMBER_ONE || userSecondNum == NUMBER_TWO)){
+    else if ((userFirstNum == number1 || userFirstNum == number2) ||
+        (userSecondNum == number1 || userSecondNum == number2)){
         println("Вы выиграли утешительный приз!")
     }
     else {
         println("Неудача!")
     }
-    println("Выйгрышные числа $NUMBER_ONE и $NUMBER_TWO")
+    println("Выйгрышные числа $number1 и $number2")
 }
