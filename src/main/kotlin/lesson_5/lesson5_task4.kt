@@ -10,19 +10,16 @@ fun main() {
     val userLogin = readln()
 
     if (userLogin == USER_LOGIN) {
-        println("Введите пароль.")
+        println("Введите пароль Вашей учетной записи.")
     } else {
         println("Пройдите регистрацию.")
-        return
     }
-    println("Введите пароль Вашей учетной записи.")
     val userPassword = readln()
 
     if (userPassword == USER_PASSWORD) {
         println("Приветствуем Вас на борту нашего корабля $SHIP_NAME")
-        return
+
     } else {
         println("Неверный пароль")
-        return
     }
 }
