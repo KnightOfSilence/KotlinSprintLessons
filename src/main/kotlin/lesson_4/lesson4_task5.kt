@@ -19,12 +19,7 @@ fun main() {
 
     println("Погода хорошая?")
     val weatherCondition = readln().toBoolean()
-    val canStart = ((damagedShip == IS_CASE_DAMAGE)
-            && (crewNum in CREW_MIN .. CREW_MAX)
-            && (foodBoxes > FOOD_BOXES))
-            || ((damagedShip != IS_CASE_DAMAGE)
-            && (crewNum == CREW_MAX)
-            && (foodBoxes > FOOD_BOXES)
-            && (weatherCondition == IS_WEATHER_GOOD))
+    val canStart = ((damagedShip == IS_CASE_DAMAGE) && (crewNum in CREW_MIN .. CREW_MAX) && (foodBoxes > FOOD_BOXES)) ||
+            ((damagedShip != IS_CASE_DAMAGE) && (crewNum == CREW_MAX) && (foodBoxes >= FOOD_BOXES) && (weatherCondition == IS_WEATHER_GOOD))
     println("Корабль готов к плаванию: $canStart")
 }
