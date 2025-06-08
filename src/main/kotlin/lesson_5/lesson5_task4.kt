@@ -9,17 +9,13 @@ fun main() {
     println("Приветствуем Вас на борту нашего космического корабля $SHIP_NAME.\nВведите имя Вашей учетной записи.")
     val userLogin = readln()
 
-    if (userLogin == USER_LOGIN) {
-        println("Введите пароль Вашей учетной записи.")
-    } else {
+    if (userLogin != USER_LOGIN) {
         println("Пройдите регистрацию.")
-    }
-    val userPassword = readln()
-
-    if (userPassword == USER_PASSWORD) {
-        println("Приветствуем Вас на борту нашего корабля $SHIP_NAME")
-
     } else {
-        println("Неверный пароль")
+        println("Введите пароль Вашей учетной записи.")
+        val userPassword = readln()
+        if (userPassword == USER_PASSWORD) {
+            println("Добро пожаловать на наш корабль $SHIP_NAME")
+        }
     }
 }
