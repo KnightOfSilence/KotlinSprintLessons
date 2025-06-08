@@ -4,43 +4,27 @@ fun main() {
 
     val number1 = (0..42).random()
     val number2 = (0..42).random()
+    val number3 = (0..42).random()
+    val numberList = arrayListOf(number1, number2, number3)
 
     println("Введите первое число от 0 до 42")
     val userFirstNum = readln().toInt()
     println("Введите второе число от 0 до 42")
     val userSecondNum = readln().toInt()
+    println("Введите третье число от 0 до 42")
+    val userThirdNum = readln().toInt()
+    val userNumberList = arrayListOf(userFirstNum, userSecondNum, userThirdNum)
+    val equals = numberList.intersect(userNumberList)
+    val equalsLength = equals.size
 
-    if ((userFirstNum == number1 || userFirstNum == number2) &&
-        (userSecondNum == number1 || userSecondNum == number2)){
-        println("Поздравляем! Вы выиграли главный приз!")
+    if (equalsLength == 3) {
+        println("Вы угадали все числа и выйграли джекпот!")
+    } else if (equalsLength == 2) {
+        println("Вы угадали два числа и получаете крупный приз.")
+    } else if (equalsLength == 1) {
+        println("Вы угадали одно число. Вам положен утешительный приз.")
+    } else {
+        println("Вы не угадали ни одного числа.")
     }
-    else if ((userFirstNum == number1 || userFirstNum == number2) ||
-        (userSecondNum == number1 || userSecondNum == number2)){
-        println("Вы выиграли утешительный приз!")
-    }
-    else {
-        println("Неудача!")
-    }
-    println("Выйгрышные числа $number1 и $number2")
+    println("Выйгрышные числа: $userFirstNum, $userSecondNum, $userThirdNum")
 }
-
-
-
-
-//Для алгоритма улучшенного приложения-лотереи нужно угадать три числа от 0 до 42.
-//Пользователь вводит числа через консоль.
-//
-//Требования к программе:
-//
-//- Загаданные числа должны рандомно генерироваться при каждом запуске программы и храниться в списке.
-//- Поочередно введенные пользователем числа должны также храниться в списке.
-//- Для определения совпадений используй метод intersect() и сохрани размер полученной коллекции
-//в отдельную переменную.
-//
-//В зависимости от количества угаданных чисел программа выводит результат:
-//
-//- При трех совпадениях сообщается, что пользователь угадал все числа и выиграл джекпот.
-//- При двух совпадениях информируется о том, что пользователь угадал два числа и получает крупный приз.
-//- Если угадано одно число, пользователю выплачивается утешительный приз.
-//- Если нет совпадений, программа сообщает, что пользователь не угадал ни одного числа.
-//- В конце игры вне зависимости от результата программа выводит выигрышные числа.
