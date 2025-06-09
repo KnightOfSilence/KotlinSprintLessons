@@ -17,14 +17,11 @@ fun main() {
     val equals = numberList.intersect(userNumberList)
     val equalsLength = equals.size
 
-    if (equalsLength == 3) {
-        println("Вы угадали все числа и выйграли джекпот!")
-    } else if (equalsLength == 2) {
-        println("Вы угадали два числа и получаете крупный приз.")
-    } else if (equalsLength == 1) {
-        println("Вы угадали одно число. Вам положен утешительный приз.")
-    } else {
-        println("Вы не угадали ни одного числа.")
+    when  {
+        equalsLength == 3 -> println("Вы угадали все числа и выйграли джекпот!")
+        equalsLength == 2 -> println("Вы угадали два числа и получаете крупный приз.")
+        equalsLength == 1 -> println("Вы угадали одно число. Вам положен утешительный приз.")
+        else -> println("Вы не угадали ни одного числа.")
     }
     println("Выйгрышные числа: $userFirstNum, $userSecondNum, $userThirdNum")
 }
