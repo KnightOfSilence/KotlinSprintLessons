@@ -13,4 +13,5 @@ fun main() {
     } while (counter > 0)
 
     println("Прошло $seconds секунд")
+
 }
