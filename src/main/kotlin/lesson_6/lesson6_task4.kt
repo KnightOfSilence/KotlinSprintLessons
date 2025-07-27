@@ -7,19 +7,20 @@ fun main() {
 
     do {
 
-        println("Введите число...")
+        println("Введите число от 0 до 9")
         val digit = readln().toInt()
 
         if (digit == num) {
             println("Это была великолепная игра!")
-            break
+            return
         } else {
             counter--
             println("Неверно! Осталось $counter попыток.")
 
-        }} while (counter > 0)
+        }
+    } while (counter > 0)
 
-    if (counter == 0){
+    if (counter == 0) {
         println("Было загадано число $num")
     }
 }
