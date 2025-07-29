@@ -1,16 +1,16 @@
 package lesson_7
 
-import java.lang.Math.random
-
 fun main() {
 
-    var res: String = ""
+    val strList = 'a'..'z'
+    val numList = 0..9
+    var res = ""
 
     for (i in 1..6) {
         if (i % 2 != 0) {
-            res += ('a'..'z').random()
+            res += strList.random()
         } else {
-            res += (0..9).random()
+            res += numList.random()
         }
 
     }
