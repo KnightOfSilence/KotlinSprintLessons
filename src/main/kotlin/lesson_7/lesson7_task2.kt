@@ -2,21 +2,12 @@ package lesson_7
 
 fun main(){
 
-    var sms = (1000..9999).random()
-    println("Ваш код авторизации: $sms")
+    do {val sms = (1000..9999).random()
+        println("Ваш код авторизации: $sms")
 
-    println("Пожалуйста, введите код из смс")
-    var auth = readln().toInt()
+        println("Пожалуйста, введите код из смс")
+        val auth = readln().toInt()}
+        while (auth != sms)
 
-    if (auth == sms){
-        println("Добро пожаловать!")
-        return
-    }
-    else{
-
-    }
-
-
-
-
+    println("Добро пожаловать!")
 }
