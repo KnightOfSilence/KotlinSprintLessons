@@ -1,6 +1,7 @@
 package lesson_6
 
 fun main() {
+
     println("Добро пожаловать! Зарегистрируйтесь, пожалуйста.")
     println("Введите ваш логин")
     val login = readln()
@@ -9,9 +10,10 @@ fun main() {
 
     do {
         println("Ваш логин")
-        val user_login = readln()
+        val userLogin = readln()
         println("Ваш пароль")
-        val user_password = readln()
-    } while (user_login != login && user_password != password)
+        val userPassword = readln()
+    } while (userLogin != login || userPassword != password)
+
     println("Авторизация прошла успешно")
 }
