@@ -2,20 +2,20 @@ package lesson_7
 
 fun main() {
 
-    val variable = ('a'..'z') + ('A'..'Z') + ('0'..'9')
-    var password = ""
+    val allChars = ('a'..'z') + ('A'..'Z') + ('0'..'9')
+    var passwordList = listOf<Char>()
 
-    password += ('A'..'Z').random()
-    password += ('a'..'z').random()
-    password += ('0'..'9').random()
+    passwordList += ('A'..'Z').random()
+    passwordList += ('a'..'z').random()
+    passwordList += ('0'..'9').random()
 
     println("Задайте длину пароля. Минимум 6 символов.")
     val length = readln().toInt()
 
     if (length >= 6) {
-        for (i in length downTo 4) {
-            password += variable.random()
+        for (i in 4..length) {
+            passwordList += allChars.random()
         }
-        println(password)
+        println(passwordList.shuffled().joinToString(""))
     } else println("Пароль слишком короткий")
 }
