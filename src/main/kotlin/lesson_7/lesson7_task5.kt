@@ -1,17 +1,21 @@
 package lesson_7
 
-fun main(){
+fun main() {
 
-    val variable = "abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
-    var password: String = ""
+    val variable = ('a'..'z') + ('A'..'Z') + ('0'..'9')
+    var password = ""
+
+    password += ('A'..'Z').random()
+    password += ('a'..'z').random()
+    password += ('0'..'9').random()
 
     println("Задайте длину пароля. Минимум 6 символов.")
-    val len = readln().toInt()
+    val length = readln().toInt()
 
-    for (i in len downTo 1){
-
-        password += variable.random()
-    }
-
-println(password)
+    if (length >= 6) {
+        for (i in length downTo 4) {
+            password += variable.random()
+        }
+        println(password)
+    } else println("Пароль слишком короткий")
 }
