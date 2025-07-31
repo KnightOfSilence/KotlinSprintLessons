@@ -4,10 +4,10 @@ fun main() {
     println("Введите количество ингредиентов:")
     val numberOfIngredients = readln().toInt()
 
-    val ingredients = arrayOfNulls<String>(numberOfIngredients)
+    val ingredients = Array(numberOfIngredients) { "" }
 
-    for (i in 0 until numberOfIngredients) {
-        println("Введите ингредиент ${(i+1)}:")
+    for (i in ingredients.indices) {
+        println("Введите ингредиент ${(i + 1)}:")
         ingredients[i] = readln()
     }
 
