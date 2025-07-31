@@ -12,6 +12,8 @@ fun main() {
     val ingredientsSet = ingredientsList.toSet()
     ingredientsList = ingredientsSet.toMutableList()
     val sortedIngredientsList = ingredientsList.sorted()
+    val res = sortedIngredientsList.toMutableList()
+    res[0] = res[0].capitalize()
 
-    println(sortedIngredientsList.joinToString(", "))
+    println(res.joinToString(", "))
 }
