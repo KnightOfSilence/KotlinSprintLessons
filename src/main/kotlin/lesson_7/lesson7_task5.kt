@@ -3,7 +3,7 @@ package lesson_7
 fun main() {
 
     val allChars = ('a'..'z') + ('A'..'Z') + ('0'..'9')
-    var passwordList = listOf<Char>()
+    val passwordList = mutableListOf<Char>()
 
     passwordList += ('A'..'Z').random()
     passwordList += ('a'..'z').random()
