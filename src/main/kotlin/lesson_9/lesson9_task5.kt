@@ -6,7 +6,7 @@ fun main() {
 
     for (i in 1..5) {
         println("Введите название ингредиента $i:")
-        val  userInput = readln()
+        val userInput = readln()
         ingredientsList.add(userInput)
     }
     val ingredientsSet = ingredientsList.toSet()
