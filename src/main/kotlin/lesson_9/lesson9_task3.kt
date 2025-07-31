@@ -6,14 +6,11 @@ fun main() {
 
     println("Сколько порций омлета вы хотите приготовить?")
     val numDishes = readln().toInt()
-
-    val eggsQnty = omeletList[0] * numDishes
-    val milkQnty = omeletList[1] * numDishes
-    val oilQnty = omeletList[2] * numDishes
+    val omeletListFinal = omeletList.map { it * numDishes }
 
     println(
-        "На $numDishes порций вам понадобится: Яиц – ${eggsQnty}шт," +
-                " молока – ${milkQnty}мл," +
-                " сливочного масла – ${oilQnty}гр."
+        "На $numDishes порций вам понадобится: Яиц – ${omeletListFinal[0]}шт," +
+                " молока – ${omeletListFinal[1]}мл," +
+                " сливочного масла – ${omeletListFinal[2]}гр."
     )
 }
