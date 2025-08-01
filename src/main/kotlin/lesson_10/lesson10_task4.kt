@@ -7,9 +7,9 @@ fun main() {
 
     while (continueGame) {
 
-        val userTurn: Int = userRollingDice()
+        val userTurn: Int = rollingDice()
         println("У игрока выпало число $userTurn")
-        val computerTurn: Int = computerRollingDice()
+        val computerTurn: Int = rollingDice()
         println("У компьютера выпало число $computerTurn")
 
         if (userTurn > computerTurn) {
@@ -24,11 +24,7 @@ fun main() {
     println("Игра окончена. Вы выиграли $userWins раз.")
 }
 
-fun userRollingDice(): Int {
-    return (1..6).random()
-}
-
-fun computerRollingDice(): Int {
+fun rollingDice(): Int {
     return (1..6).random()
 }
 
