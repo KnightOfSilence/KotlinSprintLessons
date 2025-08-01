@@ -37,6 +37,6 @@ fun newRound(): Boolean {
     println("Хотите сыграть еще раз? Введите Да или Нет: ")
     val userAnswer = readln().lowercase()
 
-    if (userAnswer == "да") return true
-    else return false
+    return if (userAnswer == "да") true
+    else false
 }
