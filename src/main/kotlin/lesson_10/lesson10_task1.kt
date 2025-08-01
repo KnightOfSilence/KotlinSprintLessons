@@ -2,9 +2,9 @@ package lesson_10
 
 fun main() {
 
-    val userTurn: Int = userRollingDice()
+    val userTurn: Int = rollingDice()
     println("У игрока выпало число $userTurn")
-    val computerTurn: Int = computerRollingDice()
+    val computerTurn: Int = rollingDice()
     println("У компьютера выпало число $computerTurn")
 
     if (userTurn > computerTurn) println("Победило человечество")
@@ -12,11 +12,8 @@ fun main() {
     else println("Победила дружба")
 }
 
-fun userRollingDice(): Int {
+fun rollingDice(): Int {
     return (1..6).random()
 }
 
-fun computerRollingDice(): Int {
-    return (1..6).random()
-}
 
