@@ -35,7 +35,7 @@ fun computerRollingDice(): Int {
 fun newRound(): Boolean {
 
     println("Хотите сыграть еще раз? Введите Да или Нет: ")
-    val userAnswer = readln().toString().lowercase()
+    val userAnswer = readln().lowercase()
 
     if (userAnswer == "да") return true
     else return false
