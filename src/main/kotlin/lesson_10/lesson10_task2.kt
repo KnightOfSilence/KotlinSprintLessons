@@ -1,5 +1,7 @@
 package lesson_10
 
+const val PASSWORD_LENGTH = 4
+
 fun main() {
 
     println("Введите логин")
@@ -18,5 +20,5 @@ fun main() {
 
 fun properLength(login: String, password: String): Boolean {
 
-    return login.length >= 4 && password.length >= 4
+    return login.length >= PASSWORD_LENGTH && password.length >= PASSWORD_LENGTH
 }
