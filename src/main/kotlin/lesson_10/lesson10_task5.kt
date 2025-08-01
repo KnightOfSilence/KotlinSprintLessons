@@ -1,14 +1,10 @@
 package lesson_10
 
-import com.sun.imageio.plugins.common.I18N
-
 const val LOGIN = "userpass"
 const val PASSWORD = "qwerty"
 
 
 fun main() {
-
-    val shopingCart = listOf("роутер", "кабель", "жесткий диск")
 
     println("Введите логин")
     val login = readln()
@@ -18,11 +14,7 @@ fun main() {
 
     val token1 = token(login, password)
 
-    val getCart = getCart(token1)
-
-    if (token1 != null) {
-        println(shopingCart.joinToString(", "))
-    } else println("Авторизация не удалась!")
+    getCart(token1)
 }
 
 fun token(login: String, password: String): MutableList<String>? {
@@ -40,9 +32,12 @@ fun token(login: String, password: String): MutableList<String>? {
     }
 }
 
-fun getCart(token1:String){
+fun getCart(token1: MutableList<String>?) {
 
+    val shopingCart = listOf("роутер", "кабель", "жесткий диск")
 
-
+    if (token1 != null) {
+       println(shopingCart.joinToString(", "))
+    } else println("Авторизация не удалась!")
 }
 
