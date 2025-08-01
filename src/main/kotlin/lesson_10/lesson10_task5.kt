@@ -12,12 +12,12 @@ fun main() {
     println("Введите пароль")
     val password = readln()
 
-    val token1 = token(login, password)
+    val token1 = generateToken(login, password)
 
     getCart(token1)
 }
 
-fun token(login: String, password: String): MutableList<String>? {
+fun generateToken(login: String, password: String): MutableList<String>? {
     if (login != LOGIN || password != PASSWORD) {
         return null
     } else {
