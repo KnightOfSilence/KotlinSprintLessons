@@ -7,9 +7,9 @@ fun main() {
 
     while (continueGame) {
 
-        val userTurn: Int = rollingDice()
+        val userTurn: Int = lesson_1_10.lesson_10.rollingDice()
         println("У игрока выпало число $userTurn")
-        val computerTurn: Int = rollingDice()
+        val computerTurn: Int = lesson_1_10.lesson_10.rollingDice()
         println("У компьютера выпало число $computerTurn")
 
         if (userTurn > computerTurn) {
