@@ -1,6 +1,7 @@
 package lesson_11
 
 class User(
+    val id: Int = 1,
     val nickname: String,
     val avatarUrl: String,
     var status: String = "микрофон выключен",
@@ -12,7 +13,7 @@ class ChatRoom(
     var users: MutableList<User> = mutableListOf(),
 ) {
     fun addUser(person: User) {
-        if (person !in users) {
+        if (person.id !in users.map { it.id }) {
             users.add(person)
             println("Участник ${person.nickname} добавлен в комнату")
         } else {
@@ -48,6 +49,7 @@ fun main() {
     )
 
     val user2 = User(
+        id = 2,
         nickname = "User2",
         avatarUrl = "https://pictures.com/avatar2.jpg",
     )
