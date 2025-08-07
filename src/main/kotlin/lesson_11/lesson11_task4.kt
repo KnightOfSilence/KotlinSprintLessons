@@ -5,6 +5,7 @@ class RecipeCategory(
     val categoryName: String,
     val categoryIcon: String,
     val categoryNumberOfOrder: Int,
+    val recipes: List<Recipe>,
 )
 
 class Ingredient(
