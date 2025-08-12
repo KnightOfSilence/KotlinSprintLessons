@@ -1,6 +1,5 @@
 package lesson_11
 
-
 class ForumMember(
     val userId: Int,
     val userName: String,
@@ -21,6 +20,7 @@ class Forum {
         members[userId] = ForumMember(userId, name)
         return userId
     }
+
     fun createNewMessage(authorId: Int, message: String) {
         if (members.containsKey(authorId)) {
             messages.add(ForumPost(authorId, message))
