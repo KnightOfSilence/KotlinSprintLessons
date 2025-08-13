@@ -16,6 +16,7 @@ fun generateDailyWeather4(): DailyWeather4 {
     return DailyWeather4(dayTemp, nightTemp, hasPrecipitation)
 }
 
+
 fun main() {
     val weather4List = mutableListOf<DailyWeather4>()
 
@@ -26,5 +27,9 @@ fun main() {
     val averageNightTemperatures = (weather4List.map { it.nightTemp }).average()
     val precipitationDays = weather4List.count { it.hasPrecipitation }
 
+    fun Double.format(digits: Int) = "%.${digits}f".format(this)
 
+    println("Средняя дневная температура за месяц: ${averageDayTemperatures.format(2)} °C")
+    println("Средняя ночная температура за месяц: ${averageNightTemperatures.format(2)} °C")
+    println("Кол-во дней с осадками: $precipitationDays")
 }
