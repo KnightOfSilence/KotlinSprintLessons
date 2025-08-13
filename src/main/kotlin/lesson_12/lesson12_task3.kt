@@ -1,11 +1,11 @@
 package lesson_12
 
 
-const val KELVIN_TO_CELCIUS = 273.15
+const val KELVIN_TO_CELSIUS = 273.15
 class DailyWeather2(_dailyTemp: Int, _nightTemp: Int, _hasPrecipitation: Boolean) {
 
-    val dailyTemp = _dailyTemp - KELVIN_TO_CELCIUS
-    val nightTemp = _nightTemp - KELVIN_TO_CELCIUS
+    val dailyTemp = _dailyTemp - KELVIN_TO_CELSIUS
+    val nightTemp = _nightTemp - KELVIN_TO_CELSIUS
     val hasPrecipitation = _hasPrecipitation
 
     fun printWeather2() {
