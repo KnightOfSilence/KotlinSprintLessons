@@ -26,10 +26,8 @@ fun main() {
         PhoneBook3("Алена", 89163456798L, company = "ВТБ"),
     )
 
-    val companyList = contactList.map { it.company }
+    val companyList = contactList.mapNotNull { it.company }
     companyList.forEach {
-        if (it == null) {
-            println("не указано")
-        } else println(it)
+        println(it)
     }
 }
