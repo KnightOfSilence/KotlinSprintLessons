@@ -7,7 +7,7 @@ class PhoneBook2(
     val company: String? = null
 ) {
     fun printInfo() {
-        val companyInfo = if (company != null) "Компания: $company" else "<не указано>"
+        val companyInfo = company ?: "<не указано>"
         println(
             "- Имя: $name\n" +
                     "- Номер: $phoneNumber\n" +
