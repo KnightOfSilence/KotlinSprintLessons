@@ -1,8 +1,6 @@
 package lesson_12
 
 import kotlin.random.Random
-
-
 class DailyWeather4(
     val dayTemp: Int,
     val nightTemp: Int,
@@ -10,8 +8,8 @@ class DailyWeather4(
 )
 
 fun generateDailyWeather4(): DailyWeather4 {
-    val dayTemp = Random.nextInt(-10, 30)
-    val nightTemp = Random.nextInt(-10, 30)
+    val dayTemp = (-10..30).random()
+    val nightTemp = (-10 .. 30).random()
     val hasPrecipitation = Random.nextBoolean()
     return DailyWeather4(dayTemp, nightTemp, hasPrecipitation)
 }
