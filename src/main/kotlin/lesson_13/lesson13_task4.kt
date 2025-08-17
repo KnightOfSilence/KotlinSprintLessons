@@ -19,16 +19,13 @@ fun main() {
     val contactList = mutableListOf<PhoneBook4>()
 
     fun addContact(name: String, phoneNumber: String, company: String? = null) {
-//        println("Введите имя контакта:")
-//        val name = name
+
         println("Введите номер телефона:")
         val phoneNumber = phoneNumber.toLongOrNull()
         if (phoneNumber == null) {
             println("Вы не указали номер телефона.")
             return
         }
-//        println("Введите название компании:")
-//        val company = company
         val contact = PhoneBook4(name, phoneNumber, company)
         contactList.add(contact)
     }
