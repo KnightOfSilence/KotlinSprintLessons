@@ -1,7 +1,7 @@
 package lesson_12
 
 
-const val KELVIN_TO_CELSIUS = 273.15
+const val KELVIN_TO_CELSIUS1 = 273.15
 
 class DailyWeather3(_dailyTemp: Int, _nightTemp: Int, _hasPrecipitation: Boolean) {
 
@@ -17,7 +17,7 @@ class DailyWeather3(_dailyTemp: Int, _nightTemp: Int, _hasPrecipitation: Boolean
     }
 }
 
-fun Double.format(digits: Int) = "%.${digits}f".format(this)
+fun Double.format1(digits: Int) = "%.${digits}f".format(this)
 
 fun main() {
     val weather3 = DailyWeather3(280, 250, false)
