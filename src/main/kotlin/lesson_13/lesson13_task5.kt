@@ -9,7 +9,7 @@ class PhoneBook4(
     fun printInfo() {
         val companyInfo = company ?: "<не указано>"
         println(
-            "- Имя: $name\n" + "- Номер: $phoneNumber\n" + "- $companyInfo"
+            "- Имя: $name\n- Номер: $phoneNumber\n- $companyInfo"
         )
     }
 }
@@ -17,13 +17,11 @@ class PhoneBook4(
 fun main() {
     val contactList = mutableListOf<PhoneBook4>()
 
-
     fun addContact(name: String, phoneNumber: String, company: String? = null) {
         println("Введите номер телефона:")
         try {
             val phoneNumber = phoneNumber.toLong()
         } catch (e: NumberFormatException) {
-            // Ловим ошибку, если ввод не является числом
             println("Ошибка: $e")
             println("Номер телефона должен содержать только цифры!")
             return
