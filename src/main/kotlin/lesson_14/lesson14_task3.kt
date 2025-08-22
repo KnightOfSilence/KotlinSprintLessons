@@ -1,5 +1,7 @@
 package lesson_14
 
+import kotlin.math.roundToLong
+
 abstract class Figure {
     abstract val color: String
     abstract fun calculateSquare(): Double
@@ -24,14 +26,12 @@ class Circle(private val radius: Double, override val color: String) : Figure() 
 class Rectangle(private val length: Double, private val width: Double, override val color: String) :
     Figure() {
     override fun calculateSquare(): Double {
-        length * width
         val result = length * width
         println("Площадь прямоугольника: $result")
         return result
     }
 
     override fun calculatePerimeter(): Double {
-        2 * (length + width)
         val result = 2 * (length + width)
         println("Периметр прямоугольника: $result")
         return result
@@ -54,6 +54,7 @@ fun main() {
     val rectangle2 = Rectangle(5.0, 10.0, "белый")
     rectangle2.calculatePerimeter()
     rectangle2.calculateSquare()
+    println()
 
     val listOfFigures = listOf(circle1, circle2, rectangle1, rectangle2)
     var totalSquare = 0.0
@@ -63,8 +64,8 @@ fun main() {
         .forEach { totalPerimeter += it.calculatePerimeter() }
     listOfFigures.filter { it.color == "белый" }.forEach { totalSquare += it.calculateSquare() }
 
-    println(totalPerimeter)
-    println(totalSquare)
+    println("Сумма периметров: ${totalPerimeter.roundToLong()}")
+    println("Общая площадь: ${totalSquare.roundToLong()}")
 }
 
 
