@@ -1,6 +1,5 @@
 package lesson_14
 
-
 open class LinerShip2(
     open val name: String = "Лайнер",
     open val speed: Int = 20,
@@ -18,7 +17,7 @@ open class LinerShip2(
         )
     }
 
-    open fun shippingMethod() {
+    open fun cargoLoad() {
         println("Выдвинут горизонтальный трап со шкафута.")
     }
 }
@@ -30,7 +29,7 @@ class CargoShip2(
     override val passengersCapacity: Int = 60,
 ) : LinerShip2(name, speed, tonnage, passengersCapacity) {
 
-    override fun shippingMethod() {
+    override fun cargoLoad() {
         println("Активирован погрузочный кран.")
     }
 }
@@ -47,7 +46,7 @@ class IceBreakerLiner2(
         println("Возможность колоть лед: $isIceBreaker")
     }
 
-    override fun shippingMethod() {
+    override fun cargoLoad() {
         println("Открыты ворота со стороны кормы.")
     }
 }
@@ -56,16 +55,15 @@ fun main() {
 
     val liner = LinerShip2()
     liner.showShipInfo2()
-    liner.shippingMethod()
+    liner.cargoLoad()
     println()
 
     val cargoShip = CargoShip2()
     cargoShip.showShipInfo2()
-    cargoShip.shippingMethod()
+    cargoShip.cargoLoad()
     println()
 
     val iceBreakerLiner = IceBreakerLiner2()
     iceBreakerLiner.showShipInfo2()
-    iceBreakerLiner.shippingMethod()
+    iceBreakerLiner.cargoLoad()
 }
-
