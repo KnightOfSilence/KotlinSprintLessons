@@ -1,6 +1,5 @@
 package lesson_14
 
-
 open class LinerShip(
     open val name: String = "Лайнер",
     open val speed: Int = 20,
@@ -20,17 +19,17 @@ open class LinerShip(
 }
 
 class CargoShip(
-    override val name: String = "Грузовое судно",
-    override val speed: Int = 20,
-    override val tonnage: Int = 50000,
-    override val passengersCapacity: Int = 60,
+    name: String = "Грузовое судно",
+    speed: Int = 18,
+    tonnage: Int = 500000,
+    passengersCapacity: Int = 60,
 ) : LinerShip(name, speed, tonnage, passengersCapacity)
 
 class IceBreakerLiner(
-    override val name: String = "Ледокольное судно",
-    override val speed: Int = 10,
-    override val tonnage: Int = 15000,
-    override val passengersCapacity: Int = 50,
+    name: String = "Ледокольное судно",
+    speed: Int = 10,
+    tonnage: Int = 15000,
+    passengersCapacity: Int = 50,
     val isIceBreaker: Boolean = true,
 ) : LinerShip(name, speed, tonnage, passengersCapacity) {
     override fun showShipInfo() {
