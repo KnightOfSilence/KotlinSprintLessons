@@ -38,20 +38,24 @@ class Rectangle(private val length: Double, private val width: Double, override 
     }
 }
 
+const val COLOR_WHITE = "белый"
+const val COLOR_BLACK = "черный"
+
+
 fun main() {
-    val circle1 = Circle(5.0, "черный")
+    val circle1 = Circle(5.0, COLOR_BLACK)
     circle1.calculatePerimeter()
     circle1.calculateSquare()
     println()
-    val circle2 = Circle(10.0, "белый")
+    val circle2 = Circle(10.0, COLOR_WHITE)
     circle2.calculatePerimeter()
     circle2.calculateSquare()
     println()
-    val rectangle1 = Rectangle(4.0, 6.0, "черный")
+    val rectangle1 = Rectangle(4.0, 6.0, COLOR_BLACK)
     rectangle1.calculatePerimeter()
     rectangle1.calculateSquare()
     println()
-    val rectangle2 = Rectangle(5.0, 10.0, "белый")
+    val rectangle2 = Rectangle(5.0, 10.0, COLOR_WHITE)
     rectangle2.calculatePerimeter()
     rectangle2.calculateSquare()
     println()
@@ -60,13 +64,10 @@ fun main() {
     var totalSquare = 0.0
     var totalPerimeter = 0.0
 
-    listOfFigures.filter { it.color == "черный" }
+    listOfFigures.filter { it.color == COLOR_BLACK }
         .forEach { totalPerimeter += it.calculatePerimeter() }
-    listOfFigures.filter { it.color == "белый" }.forEach { totalSquare += it.calculateSquare() }
+    listOfFigures.filter { it.color == COLOR_WHITE }.forEach { totalSquare += it.calculateSquare() }
 
     println("Сумма периметров: ${totalPerimeter.roundToLong()}")
     println("Общая площадь: ${totalSquare.roundToLong()}")
 }
-
-
-
