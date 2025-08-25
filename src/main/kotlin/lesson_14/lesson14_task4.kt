@@ -1,6 +1,6 @@
 package lesson_14
 
-open class SolarSystem(
+open class CelestialBody(
     val name: String,
     val hasAtmosphere: Boolean,
     val isGoodForLanding: Boolean,
@@ -8,7 +8,6 @@ open class SolarSystem(
     open fun displayInfo() {
         println(
             """            
-            Название планеты: $name
             Наличие атмосферы: ${if (hasAtmosphere) "да" else "нет"}
             Возможность высадки на поверхность: ${if (isGoodForLanding) "да" else "нет"}          
             """.trimIndent()
@@ -20,13 +19,14 @@ class Planet(
     name: String,
     hasAtmosphere: Boolean,
     isGoodForLanding: Boolean,
-) : SolarSystem(name, hasAtmosphere, isGoodForLanding) {
+) : CelestialBody(name, hasAtmosphere, isGoodForLanding) {
     val satellites = mutableListOf<Satellite>()
     fun addSatellite(satellite: Satellite) {
         satellites.add(satellite)
     }
 
     override fun displayInfo() {
+        println("Название небесного тела: планета $name")
         super.displayInfo()
         println("Спутники:")
         if (satellites.isEmpty()) {
@@ -43,7 +43,7 @@ class Satellite(
     name: String,
     hasAtmosphere: Boolean,
     isGoodForLanding: Boolean,
-) : SolarSystem(name, hasAtmosphere, isGoodForLanding)
+) : CelestialBody(name, hasAtmosphere, isGoodForLanding)
 
 fun main() {
     val saturn = Planet("Сатурн", true, false)
