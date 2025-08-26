@@ -13,11 +13,11 @@ interface Swimable {
 interface Flyable {
     val name: String
 
-    fun fly() = println("$name летит.")
-    fun flyDown() = println("$name снижается.")
-    fun flyUp() = println("$name взлетает.")
-    fun landOnTheWater() = println("$name садится на воду.")
-    fun diveIntoTheWater() = println("$name ныряет.")
+    fun fly()
+    fun flyDown()
+    fun flyUp()
+    fun landOnTheWater()
+    fun diveIntoTheWater()
 }
 
 class Fish(override val name: String) : Swimable {
