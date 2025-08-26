@@ -1,9 +1,9 @@
 package lesson_15
 
-interface Swimable {
+interface Swimmable {
     val name: String
 
-    fun swim()
+    fun swimUnderTheWater()
     fun swimDown()
     fun swimUp()
     fun swimBack()
@@ -18,16 +18,16 @@ interface Flyable {
     fun flyUp()
     fun landOnTheWater()
     fun diveIntoTheWater()
+    fun swimOnTheWater()
 }
 
-class Fish(override val name: String) : Swimable {
+class Fish(override val name: String) : Swimmable {
 
-    override fun swim() = println("$name плавает.")
+    override fun swimUnderTheWater() = println("$name плавает в воде.")
     override fun swimDown() = println("$name погрузился.")
     override fun swimUp() = println("$name всплыл.")
     override fun swimBack() = println("$name плывет назад.")
     override fun swimForward() = println("$name плывет вперед.")
-
 }
 
 class Bird(override val name: String) : Flyable {
@@ -37,14 +37,22 @@ class Bird(override val name: String) : Flyable {
     override fun flyUp() = println("$name взлетает.")
     override fun landOnTheWater() = println("$name садится на воду.")
     override fun diveIntoTheWater() = println("$name ныряет.")
-    fun swim() = println("$name плавает.")
+    override fun swimOnTheWater() = println("$name плавает на поверхности воды.")
+}
 
+class Duck(override val name: String) : Flyable{
+    override fun fly() = println("$name летит.")
+    override fun flyDown() = println("$name снижается.")
+    override fun flyUp() = println("$name взлетает.")
+    override fun landOnTheWater() = println("$name садится на воду.")
+    override fun diveIntoTheWater() = println("$name ныряет.")
+    override fun swimOnTheWater() = println("$name плавает на поверхности воды.")
 }
 
 fun main() {
 
     val crucianCarp = Fish("карась")
-    crucianCarp.swim()
+    crucianCarp.swimUnderTheWater()
     crucianCarp.swimDown()
     crucianCarp.swimUp()
     crucianCarp.swimBack()
@@ -57,15 +65,15 @@ fun main() {
     seagull.flyUp()
     seagull.landOnTheWater()
     seagull.diveIntoTheWater()
-    seagull.swim()
+    seagull.swimOnTheWater()
     println()
 
-    val duck = Bird("утка")
+    val duck = Duck("утка")
     duck.fly()
     duck.flyDown()
     duck.flyUp()
     duck.landOnTheWater()
     duck.diveIntoTheWater()
-    duck.swim()
+    duck.swimOnTheWater()
     println()
 }
