@@ -53,4 +53,3 @@ fun main() {
     chat.addThreadMessage(0, "Сидоров", "Что нового?")
     chat.printChat()
 }
-
