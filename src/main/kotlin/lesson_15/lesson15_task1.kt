@@ -3,11 +3,11 @@ package lesson_15
 interface Swimable {
     val name: String
 
-    fun swim() = println("$name плавает.")
-    fun swimDown() = println("$name погрузился.")
-    fun swimUp() = println("$name всплыл.")
-    fun swimBack() = println("$name плывет назад.")
-    fun swimForward() = println("$name плывет вперед.")
+    fun swim()
+    fun swimDown()
+    fun swimUp()
+    fun swimBack()
+    fun swimForward()
 }
 
 interface Flyable {
@@ -20,8 +20,28 @@ interface Flyable {
     fun diveIntoTheWater() = println("$name ныряет.")
 }
 
-class Fish(override val name: String) : Swimable
-class Bird(override val name: String) : Flyable, Swimable
+class Fish(override val name: String) : Swimable{
+
+    override fun swim() = println("$name плавает.")
+    override fun swimDown() = println("$name погрузился.")
+    override fun swimUp() = println("$name всплыл.")
+    override fun swimBack() = println("$name плывет назад.")
+    override fun swimForward() = println("$name плывет вперед.")
+
+}
+class Bird(override val name: String) : Flyable, Swimable{
+
+    override fun fly() = println("$name летит.")
+    override fun flyDown() = println("$name снижается.")
+    override fun flyUp() = println("$name взлетает.")
+    override fun landOnTheWater() = println("$name садится на воду.")
+    override fun diveIntoTheWater() = println("$name ныряет.")
+    override fun swim() = println("$name плавает.")
+    override fun swimDown() = println("$name погрузился.")
+    override fun swimUp() = println("$name всплыл.")
+    override fun swimBack() = println("$name плывет назад.")
+    override fun swimForward() = println("$name плывет вперед.")
+}
 
 fun main() {
 
