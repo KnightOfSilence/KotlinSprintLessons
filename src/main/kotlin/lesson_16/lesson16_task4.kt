@@ -1,6 +1,5 @@
 package lesson_16
 
-
 class Order(
     private val number: Int,
     private var isReady: Boolean = false,
@@ -13,18 +12,17 @@ class Order(
         return isReady
     }
 
-    private fun changeOrderStatus(order: Boolean) {
-        isReady = order
+    private fun changeOrderStatus(newStatus: Boolean) {
+        isReady = newStatus
     }
-    fun queryToManager(order: Order, query: Boolean) {
-        order.changeOrderStatus(query)
+
+    fun queryToManager(newStatus: Boolean) {
+        changeOrderStatus(newStatus)
     }
 }
 
-
-
 fun main() {
     val order = Order(1)
-    order.queryToManager(order, true)
+    order.queryToManager(true)
     println("Заказ ${order.getOrderNumber()} готов: ${order.getOrderStatus()}")
 }
