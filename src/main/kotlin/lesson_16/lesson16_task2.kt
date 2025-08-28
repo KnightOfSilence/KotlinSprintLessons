@@ -1,25 +1,27 @@
 package lesson_16
 
+import kotlin.math.pow
+
 private const val PI = 3.14
 
-class Round(val radius: Int) {
+class Round(private val radius: Int) {
 
-    fun circumFerence() {
+    fun getCircumFerence() {
 
         val perimeter = 2 * PI * radius
         println("Периметр окружности: $perimeter")
     }
 
-    fun roundSquare() {
+    fun getRoundSquare() {
 
-        val square = PI * radius * radius
+        val square = PI * radius.toDouble().pow(2).toInt()
         println("Площадь окружности: $square")
     }
 }
 
 fun main() {
 
-    val res = Round(15)
-    res.circumFerence()
-    res.roundSquare()
+    val result = Round(15)
+    result.getCircumFerence()
+    result.getRoundSquare()
 }
