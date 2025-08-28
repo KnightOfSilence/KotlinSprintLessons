@@ -17,7 +17,7 @@ class Package(
 
 fun main() {
 
-    val myFiles = Package("favorites", 70, false)
+    val myFiles = Package("Избранное", 234, false)
     println(myFiles.name)
     println()
     myFiles.isSecretFiles = true
