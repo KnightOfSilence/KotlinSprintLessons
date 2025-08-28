@@ -10,12 +10,10 @@ class Ship(
             if (value != field) {
                 println("Название судна изменять нельзя!")
             }
-            field = name
         }
 }
 
-fun main(){
-
+fun main() {
     val newShip = Ship("Titanic", 10, "Southampton")
     newShip.name = "Queen Mary"
     println(newShip.name)
