@@ -7,9 +7,7 @@ class Ship(
 ) {
     var name = _name
         set(value) {
-            if (value != field) {
-                println("Название судна изменять нельзя!")
-            }
+            println("Название судна изменять нельзя!")
         }
 }
 
