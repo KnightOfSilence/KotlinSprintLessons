@@ -23,8 +23,9 @@ class Player(
     fun heal(cure: Int = 20): Int {
         if (health > 0) {
             health += cure
+            println("$name восстановился на $cure единиц здоровья. Осталось $health здоровья.")
         }
-        println("$name восстановился на $cure единиц здоровья. Осталось $health здоровья.")
+
         return health
     }
 
