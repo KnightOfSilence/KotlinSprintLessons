@@ -6,13 +6,16 @@ class User(_login: String, _password: String) {
             if (value != field) println("Вы не можете изменить пароль.")
         }
         get() {
-            var hiddenPassword = ""
-            for (i in 1..field.length) hiddenPassword += "*"
+            var hiddenPassword = "*".repeat(field.length)
+
             return hiddenPassword
         }
     var login = _login
         set(value) {
-            if (value != field) println("Логин успешно изменен.")
+            if (value != field) {
+                field = value
+                println("Логин успешно изменен.")
+            }
         }
 }
 
