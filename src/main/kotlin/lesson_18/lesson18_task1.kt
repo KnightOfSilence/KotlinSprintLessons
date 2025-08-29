@@ -16,7 +16,6 @@ class Order(number: Int) {
 }
 
 fun main() {
-
     val newOrder = Order(1)
     newOrder.getOrder("PS5")
     val newOrder2 = Order(2)
