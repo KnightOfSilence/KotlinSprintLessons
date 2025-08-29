@@ -9,7 +9,7 @@ private class Package(
     var currentLocation = _currentLocation
         set(value) {
             if (field != value) {
-                movementCounter ++
+                movementCounter++
                 field = value
             }
         }
