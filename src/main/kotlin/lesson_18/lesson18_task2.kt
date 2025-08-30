@@ -2,16 +2,17 @@ package lesson_18
 
 const val minDiceValue = 1
 
-open class Dice(private val sides: Int = 8) {
+abstract class Dice() {
+    abstract val sides: Int
     open fun rollDice(): String {
         return "Выпало число ${(minDiceValue..sides).random()}"
     }
 }
 
-class DiceOfFour() : Dice(4)
-class DiceOfSix() : Dice(6)
+class DiceOfFour(override val sides: Int = 4) : Dice()
+class DiceOfSix(override val sides: Int = 6) : Dice()
 
-class DiceOfEight() : Dice(8)
+class DiceOfEight(override val sides: Int = 8) : Dice()
 
 fun main() {
     val diceOfFour = DiceOfFour()
