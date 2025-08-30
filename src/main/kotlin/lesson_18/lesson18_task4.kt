@@ -28,4 +28,3 @@ fun main() {
     val rectangleBox = RectangleBox(2.0, 3.0, 4.0)
     println(rectangleBox.getBoxArea())
 }
-
