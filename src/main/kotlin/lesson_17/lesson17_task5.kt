@@ -3,13 +3,10 @@ package lesson_17
 class User(_login: String, _password: String) {
     var password = _password
         set(value) {
-            if (value != field) println("Вы не можете изменить пароль.")
+            println("Вы не можете изменить пароль.")
         }
-        get() {
-            var hiddenPassword = "*".repeat(field.length)
+        get()  = "*".repeat(field.length)
 
-            return hiddenPassword
-        }
     var login = _login
         set(value) {
             if (value != field) {
