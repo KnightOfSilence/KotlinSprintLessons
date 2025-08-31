@@ -1,10 +1,10 @@
 package lesson_19
 
 enum class AquariumFish {
-    GUPPY,
-    ANGELFISH,
-    GOLDFISH,
-    SIAMESE_FIGHTING_FISH,
+    ГУППИ,
+    СКАЛЯРИЯ,
+    ЗОЛОТАЯ_РЫБКА,
+    ПЕТУШОК,
 }
 
 fun snowFishNames() {
