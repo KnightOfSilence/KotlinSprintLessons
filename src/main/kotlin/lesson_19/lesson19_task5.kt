@@ -50,7 +50,6 @@ fun main() {
                 continue
             }
         }
-
         cardIndex.add(Person(name, gender))
     }
 
