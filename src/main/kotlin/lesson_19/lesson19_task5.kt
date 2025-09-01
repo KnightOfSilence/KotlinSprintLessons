@@ -42,7 +42,7 @@ fun main() {
         print("Пол (M/F): ")
         val genderInput = readLine()?.trim()
 
-        val gender = when (genderInput) {
+        val gender = when (genderInput?.uppercase()) {
             "M" -> Gender.MALE
             "F" -> Gender.FEMALE
             else -> {
