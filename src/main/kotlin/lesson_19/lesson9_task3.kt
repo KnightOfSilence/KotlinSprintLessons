@@ -3,6 +3,7 @@ package lesson_19
 open class SpaceShip {
 
     fun takeOff() {
+//        TODO("Здесь будет логика взлета корабля")
         println("Корабль взлетел")
     }
 
