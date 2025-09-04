@@ -4,27 +4,28 @@ enum class Ammunition(val damage: Int? = null) {
     BLUE(5), GREEN(10), RED(20),
 }
 
-class Tank(name: String, private var ammunition: Ammunition? = null) {
-    fun weaponLoad(ammunition: Ammunition): String {
-        when (ammunition) {
-            Ammunition.BLUE -> return "Заряжен ${Ammunition.BLUE} снаряд с уроном ${Ammunition.BLUE.damage}."
-            Ammunition.GREEN -> return "Заряжен ${Ammunition.GREEN} снаряд с уроном ${Ammunition.GREEN.damage}."
-            Ammunition.RED -> return "Заряжен ${Ammunition.RED} снаряд с уроном ${Ammunition.RED.damage}."
-        }
+class Tank {
+    private var ammunition: Ammunition? = null
+    fun weaponLoad(ammo: Ammunition) {
+        ammunition = ammo
+        println("Заряжен ${ammo.name} снаряд с уроном ${ammo.damage}.")
     }
 
-
-    fun shotFire(damage: Int?) {
-        if (damage == null) println("Не заряжен.") else println("Произведен выстрел с уроном $damage")
+    fun shotFire() {
+        if (ammunition == null) {
+            println("Не заряжен.")
+        } else {
+            println("Произведен выстрел с уроном ${ammunition!!.damage}")
+        }
     }
 }
 
 fun main() {
-    val tank = Tank("Т-34")
+    val tank = Tank()
     println(tank.weaponLoad(Ammunition.BLUE))
-    tank.shotFire(Ammunition.BLUE.damage)
+    tank.shotFire()
     println(tank.weaponLoad(Ammunition.GREEN))
-    tank.shotFire(Ammunition.GREEN.damage)
+    tank.shotFire()
     println(tank.weaponLoad(Ammunition.RED))
-    tank.shotFire(Ammunition.RED.damage)
+    tank.shotFire()
 }
