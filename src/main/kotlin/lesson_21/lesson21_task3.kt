@@ -6,13 +6,11 @@ class NewPlayer(
     val maxHealth: Int
 )
 
+fun NewPlayer.isHealthy(): Boolean {
+    return currentHealth == maxHealth
+}
+
 fun main() {
-
-    fun NewPlayer.isHealthy(): Boolean {
-        return currentHealth == maxHealth
-    }
-
     val player = NewPlayer("Герой", 50, 100)
     println(player.isHealthy())
 }
-
