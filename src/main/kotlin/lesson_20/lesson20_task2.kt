@@ -1,4 +1,4 @@
-package lesson_20
+
 
 class Player(
     val name: String,
